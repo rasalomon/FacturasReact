@@ -1,8 +1,7 @@
 import PropTypes from "prop-types"
-import { factura } from "../data/factura"
 
-export const ListaItemsView = ({ titulo, factura }) => {
-    const { producto, precio, cantidad } = factura.items
+export const ListaItemsView = ({ titulo, items: itemsReact }) => {
+   
     return (
         <>
 
@@ -10,13 +9,13 @@ export const ListaItemsView = ({ titulo, factura }) => {
             <table className="table table-striped table-hover">
                 <thead>
                     <tr>
-                        <th>Producto: </th>
-                        <th>Precio: </th>
-                        <th>Cantidad: {cantidad}</th>
+                        <th>Producto</th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {factura.items.map(({ id, producto, precio, cantidad }) => {
+                    {itemsReact.map(({ id, producto, precio, cantidad }) => {
                         return (
                             <tr key={id}>
                                 <td>{producto}</td>
@@ -33,5 +32,5 @@ export const ListaItemsView = ({ titulo, factura }) => {
 
 ListaItemsView.propTypes = {
     titulo: PropTypes.string.isRequired,
-    factura: PropTypes.object.isRequired
+    items: PropTypes.array.isRequired
 }

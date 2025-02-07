@@ -4,10 +4,10 @@ export const getFacturaService = () => {
   return factura
 }
 
-export const getCantProductos = (factura) => {
+export const getCantProductos = (items) => {
 
   let cantidad = 0;
-  factura.items.map(cant => {
+  items.map(cant => {
     cantidad += cant.cantidad;
   })
   /*    for(let i=0; i<factura.items.length; i++ ) {

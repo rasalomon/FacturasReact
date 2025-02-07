@@ -20,8 +20,7 @@ export const factura = {
       id: 1,
       producto: 'CPU',
       precio: 550,
-      cantidad: 7,
-      marca: 'intel'
+      cantidad: 7
     },
     {
       id: 2,
